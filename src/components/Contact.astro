@@ -1,0 +1,132 @@
+---
+import WhatsappIcon from "../icons/WhatsappIcon.astro";
+import MailIcon from "../icons/MailIcon.astro";
+import LocationIcon from "../icons/LocationIcon.astro";
+import PhoneIcon from "../icons/PhoneIcon.astro";
+import ClockIcon from "../icons/ClockIcon.astro";
+const SITE_KEY = "6LcExnYsAAAAAKC1g67hvWDFKin6HgLu4ZjwVUa6";
+---
+
+<div
+  id="contacto"
+  class="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 lg:px-8 py-20 font-medium"
+>
+  <div class="grid grid-cols-2 lg:grid-cols-2 gap-4 order-2 lg:order-1">
+    <div
+      class="text-sm text-center border border-secundary/40 rounded flex flex-col items-center justify-center p-1 lg:p-4 h-52 text-primary gap-2"
+    >
+      <span class="bg-secundary/10 p-2 rounded-full text-secundary">
+        <ClockIcon sizes="40" />
+      </span>
+      <div class="text-xs lg:text-base">
+        <p>Lunes a Viernes</p>
+        <p>08:00 a.m - 06:00 p.m</p>
+        <p>Sábados</p>
+        <p>08:00 a.m - 12:00 p.m</p>
+      </div>
+    </div>
+    <div
+      class="text-sm text-center border border-secundary/40 rounded flex flex-col items-center justify-center p-1 lg:p-4 h-52 text-primary gap-2"
+    >
+      <span class="bg-secundary/10 p-2 rounded-full text-secundary">
+        <LocationIcon sizes="40" />
+      </span>
+      <p class="wrap-anywhere text-center text-xs lg:text-base">
+        Carrera 30 corredor universitario – Lote 2, Complejo Médico Portoazul,
+        Puerto Colombia, Atlántico
+      </p>
+    </div>
+    <div
+      class="text-sm text-center border border-secundary/40 rounded flex flex-col items-center justify-center p-1 lg:p-4 h-52 text-primary gap-2"
+    >
+      <span class="bg-secundary/10 p-2 rounded-full text-secundary">
+        <WhatsappIcon sizes="40" />
+      </span>
+      <div>
+        <p class="wrap-anywhere text-center text-xs lg:text-base">
+          +57 321 433 9919
+        </p>
+        <p>Teléfono de atención</p>
+      </div>
+    </div>
+    <div
+      class="text-sm text-center border border-secundary/40 rounded flex flex-col items-center justify-center p-1 lg:p-4 h-52 text-primary gap-2"
+    >
+      <span class="bg-secundary/10 p-2 rounded-full text-secundary">
+        <MailIcon sizes="40" />
+      </span>
+      <p class="wrap-anywhere text-center text-xs lg:text-base">
+        coordinacioninvestigacion@sabbagradiologos.com
+      </p>
+    </div>
+  </div>
+
+  <form class="flex flex-col gap-2 order-1 lg:order-2" action="/api/contact">
+    <div class="flex flex-col gap-1">
+      <h1 class="text-2xl text-primary flex items-center gap-2">
+        <span>
+          <PhoneIcon sizes="25" />
+        </span>
+        Contacto
+      </h1>
+      <h2 class="text-lg text-neutral-500">
+        Compártenos tus datos y el área correspondiente te contactará pronto
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="Nombre Completo"
+        class="border-2 border-primary/25 px-4 py-2 rounded focus:outline-none focus:border-primary/60 transition"
+      />
+      <input
+        type="number"
+        name=""
+        id=""
+        placeholder="Telefono"
+        class="border-2 border-primary/25 px-4 py-2 rounded focus:outline-none focus:border-primary/60 transition"
+      />
+    </div>
+    <input
+      type="email"
+      name=""
+      id=""
+      placeholder="Email"
+      class="border-2 border-primary/25 px-4 py-2 rounded focus:outline-none focus:border-primary/60 transition"
+    />
+    <textarea
+      name=""
+      id=""
+      placeholder="Mensaje"
+      class="border-2 border-primary/25 px-4 py-2 rounded focus:outline-none focus:border-primary/60 transition grow resize-none"
+    ></textarea>
+
+    <div class="g-recaptcha" data-sitekey={SITE_KEY}></div>
+
+    <!-- <input
+      type="checkbox"
+      name=""
+      id=""
+      class="border-2 border-primary/25 px-4 py-2 rounded focus:outline-none focus:border-primary/60 transition"
+    /> -->
+
+    <button
+      type="submit"
+      class="px-4 py-3 bg-primary text-white text-lg font-medium">Enviar</button
+    >
+  </form>
+</div>
+
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.300575951694!2d-74.84857917599744!3d11.016060004730026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42df5fa259949%3A0x9a10db83b4089d1b!2sCl%C3%ADnica%20Portoazul!5e0!3m2!1ses!2sco!4v1771437991037!5m2!1ses!2sco"
+  class="w-full h-96 order-3"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<script is:inline src="https://www.google.com/recaptcha/api.js" async defer
+></script>

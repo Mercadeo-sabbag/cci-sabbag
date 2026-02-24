@@ -1,0 +1,55 @@
+---
+import PhoneIcon from "../icons/PhoneIcon.astro";
+---
+
+<div id="inicio" class="w-full min-h-dvh">
+  <div class="h-dvh relative">
+    <video
+      src="/videos/hero-desktop.mp4"
+      autoplay
+      loop
+      muted
+      preload="auto"
+      class="object-center bg-no-repeat h-full object-cover"
+    >
+    </video>
+
+    <div
+      class="absolute inset-0 bg-linear-to-r from-primary to-white/10 flex items-center p-4 lg:p-12 text-white"
+    >
+      <div class="flex flex-col gap-3">
+        <span
+          data-aos="fade-up"
+          data-aos-delay="100"
+          class="bg-secundary/10 px-4 py-1 rounded-full w-fit text-secundary text-sm"
+          >Especialistas en investigación clínica</span
+        >
+        <h1
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="text-3xl lg:text-4xl font-black upp"
+        >
+          Centro Clínico y de Investigación Sabbag
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="300" class="w-96">
+          Desarrollamos soluciones diagnósticas y terapéuticas innovadoras que
+          fortalecen la investigación clínica y transforman la atención en salud
+          en la región Caribe.
+        </p>
+
+        <a
+          href="https://wa.me/573214339919"
+          target="_blank"
+          data-aos="fade-up"
+          data-aos-delay="400"
+          class="bg-white text-primary w-fit px-4 text-sm lg:px-6 py-2 lg:text-lg font-medium rounded-full flex items-center gap-2"
+        >
+          <span>
+            <PhoneIcon sizes="25" />
+          </span>
+          Agenda tu consulta especializada</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,173 @@
+---
+import Card from "./Card.astro";
+import HeartIcon from "../icons/HeartIcon.astro";
+import ThyroidIcon from "../icons/ThyroidIcon.astro";
+import BeautyIcon from "../icons/BeautyIcon.astro";
+import GastroIcon from "../icons/GastroIcon.astro";
+import HospitalIcon from "../icons/HospitalIcon.astro";
+import NursecapIcon from "../icons/NursecapIcon.astro";
+import NephrologyIcon from "../icons/NephrologyIcon.astro";
+import NeurologyIcon from "../icons/NeurologyIcon.astro";
+import RheumatologyIcon from "../icons/RheumatologyIcon.astro";
+import BrainIcon from "../icons/BrainIcon.astro";
+import PsychologyIcon from "../icons/PsychologyIcon.astro";
+import VirusIcon from "../icons/VirusIcon.astro";
+import PillIcon from "../icons/PillIcon.astro";
+import SampleIcon from "../icons/SampleIcon.astro";
+import SyringeIcon from "../icons/SyringeIcon.astro";
+import TestIcon from "../icons/TestIcon.astro";
+
+const services = [
+  {
+    title: "Cardiología",
+    description:
+      "Diagnóstico, tratamiento y seguimiento de enfermedades del corazón y del sistema cardiovascular.",
+    icon: HeartIcon,
+  },
+  {
+    title: "Dermatología",
+    description:
+      "Evaluación y tratamiento de enfermedades de la piel, cabello y uñas.",
+    icon: BeautyIcon,
+  },
+  {
+    title: "Endocrinología",
+    description:
+      "Manejo de trastornos hormonales y metabólicos como diabetes y alteraciones tiroideas.",
+    icon: ThyroidIcon,
+  },
+  {
+    title: "Gastroenterología",
+    description:
+      "Diagnóstico y tratamiento de enfermedades del sistema digestivo.",
+    icon: GastroIcon,
+  },
+  {
+    title: "Medicina General",
+    description:
+      "Atención integral para diagnóstico inicial, prevención y seguimiento de enfermedades comunes.",
+    icon: HospitalIcon,
+  },
+  {
+    title: "Medicina Interna",
+    description:
+      "Manejo integral de enfermedades en adultos con enfoque clínico especializado.",
+    icon: NursecapIcon,
+  },
+  {
+    title: "Nefrología",
+    description:
+      "Diagnóstico y tratamiento de enfermedades renales y trastornos relacionados.",
+    icon: NephrologyIcon,
+  },
+  {
+    title: "Neurología",
+    description:
+      "Atención de enfermedades del sistema nervioso central y periférico.",
+    icon: NeurologyIcon,
+  },
+  {
+    title: "Reumatología",
+    description:
+      "Tratamiento de enfermedades autoinmunes y trastornos osteomusculares.",
+    icon: RheumatologyIcon,
+  },
+  {
+    title: "Neuropediatría",
+    description:
+      "Evaluación y tratamiento de trastornos neurológicos en niños y adolescentes.",
+    icon: BrainIcon,
+  },
+  {
+    title: "Psicología",
+    description:
+      "Atención en salud mental y acompañamiento terapéutico individual y familiar.",
+    icon: PsychologyIcon,
+  },
+  {
+    title: "Infectología",
+    description:
+      "Diagnóstico y tratamiento de enfermedades infecciosas y manejo de infecciones complejas.",
+    icon: VirusIcon,
+  },
+];
+
+const servicesComplementaries = [
+  {
+    title: "Servicio farmacéutico",
+    description:
+      "Gestión y dispensación segura de medicamentos bajo protocolos clínicos establecidos.",
+    icon: PillIcon,
+  },
+  {
+    title: "Toma de muestras",
+    description:
+      "Recolección de muestras biológicas para apoyo diagnóstico y estudios clínicos.",
+    icon: SampleIcon,
+  },
+  {
+    title: "Vacunación segura",
+    description:
+      "Aplicación de vacunas bajo estándares de seguridad y control sanitario.",
+    icon: SyringeIcon,
+  },
+];
+---
+
+<div id="servicios" class="px-4 lg:px-8 py-20 flex flex-col gap-8">
+  <!-- <h1>Servicios Medicos</h1> -->
+  <div>
+    <h1 class="text-2xl lg:text-4xl font-bold text-primary">
+      Atención médica con enfoque investigativo
+    </h1>
+    <p class="text-sm lg:text-lg text-neutral-600 font-medium">
+      Ofrecemos atención ambulatoria integral respaldada por evidencia
+      científica y protocolos clínicos de alta calidad, combinando práctica
+      médica e investigación.
+    </p>
+  </div>
+
+  <div class="flex flex-col gap-4">
+    <h2 class="text-3xl font-medium text-primary">Servicios médicos</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+      {
+        services.map((s, i) => (
+          <Card
+            title={s.title}
+            description={s.description}
+            icon={s.icon}
+            delay={100 * i + 1 % 300 == 0 ? 300 : 100 * i % 300}
+          />
+        ))
+      }
+    </div>
+
+    <!-- <ul class="grid grid-cols-2 gap-4">
+      {
+        services.map((s) => (
+          <li class="py-2 text-primary border-b border-primary/30 px-2 transition-all">
+            {s.title}
+          </li>
+        ))
+      }
+    </ul> -->
+  </div>
+
+  <div class="flex flex-col gap-4">
+    <h2 class="text-3xl font-medium text-primary">
+      Servicios clínicos complementarios
+    </h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+      {
+        servicesComplementaries.map((s, i) => (
+          <Card
+            title={s.title}
+            description={s.description}
+            icon={s.icon}
+            delay={100 * i}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>

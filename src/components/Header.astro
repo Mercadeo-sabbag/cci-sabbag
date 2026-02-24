@@ -1,0 +1,178 @@
+---
+import ArrowIcon from "../icons/ArrowIcon.astro";
+import CalendarIcon from "../icons/CalendarIcon.astro";
+import MenuIcon from "../icons/MenuIcon.astro";
+---
+
+<header
+  class="flex items-center justify-between px-8 py-4 fixed z-10 min-w-screen text-white bg-transparent hover:bg-primary hover:text-white transition duration-300 left-0 right-0 top-0"
+>
+  <img
+    src="/images/logo-white.png"
+    alt=""
+    class="w-32 object-cover"
+    data-aos="fade-right"
+  />
+
+  <nav class="hidden lg:block">
+    <ul class="flex items-center gap-4">
+      <li>
+        <a
+          data-aos="fade-down"
+          data-aos-delay="100"
+          class="px-4 py-2 rounded-full hover:bg-secundary/10 transition"
+          href="#inicio">Inicio</a
+        >
+      </li>
+      <li>
+        <a
+          data-aos="fade-down"
+          data-aos-delay="200"
+          class="px-4 py-2 rounded-full hover:bg-secundary/10 transition"
+          href="#sobre-nosotros">Sobre nosotros</a
+        >
+      </li>
+      <li>
+        <a
+          data-aos="fade-down"
+          data-aos-delay="300"
+          class="px-4 py-2 rounded-full hover:bg-secundary/10 transition"
+          href="#servicios">Servicios</a
+        >
+      </li>
+      <li>
+        <a
+          data-aos="fade-down"
+          data-aos-delay="400"
+          class="px-4 py-2 rounded-full hover:bg-secundary/10 transition"
+          href="#contacto">Contacto</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <a
+    data-aos="fade-left"
+    data-aos-delay="100"
+    href="#contacto"
+    class="rounded-full font-medium px-6 py-2 lg:flex items-center gap-2 bg-primary border border-transparent hover:border-secundary transition scheduleDate hidden"
+  >
+    <span class="text-secundary"><CalendarIcon sizes="20" /></span>
+    Agendar Cita</a
+  >
+
+  <button class="bg-primary/50 rounded-full p-1 buttonMenu lg:hidden">
+    <MenuIcon sizes="40" />
+  </button>
+
+  <nav
+    class="absolute bg-primary min-w-screen left-0 right-0 top-20 navMobile lg:hidden transition duration-300"
+  >
+    <ul class="flex flex-col">
+      <li>
+        <a class="flex items-center justify-between p-4" href="#inicio"
+          >Inicio
+          <span><ArrowIcon sizes="20" /></span>
+        </a>
+      </li>
+      <li>
+        <a class="flex items-center justify-between p-4" href="#sobre-nosotros"
+          >Sobre Nosotros
+          <span><ArrowIcon sizes="20" /></span>
+        </a>
+      </li>
+      <li>
+        <a class="flex items-center justify-between p-4" href="#servicios"
+          >Servicios
+          <span><ArrowIcon sizes="20" /></span>
+        </a>
+      </li>
+      <li>
+        <a class="flex items-center justify-between p-4" href="#contacto"
+          >Contacto
+          <span><ArrowIcon sizes="20" /></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    transform: translateY(0%);
+  }
+
+  header.headerActive {
+    background-color: #002261;
+  }
+
+  /* header.headerActive {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgb(0, 34, 97));
+    backdrop-filter: blur(5px);
+  } */
+
+  header.headerActive:hover,
+  header:hover {
+    background-color: #002261;
+  }
+
+  /* header.headerUp {
+    transform: translateY(-100%);
+  } */
+
+  header.headerActive > .scheduleDate {
+    border: 1px solid #00c7ff;
+  }
+
+  .navMobile {
+    transform: translateY(-140%);
+  }
+  .navMobile.menuActive {
+    transform: translateY(0%);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header");
+    const buttonMenu = document.querySelector(".buttonMenu");
+    const mobileMenu = document.querySelector(".navMobile");
+    const mobileButtons = document.querySelectorAll(".navMobile a");
+
+    mobileButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        mobileMenu?.classList.remove("menuActive");
+      });
+    });
+
+    buttonMenu?.addEventListener("click", () => {
+      if (mobileMenu) {
+        mobileMenu.classList.toggle("menuActive");
+      }
+    });
+
+    let lastScroll = 0;
+    window.addEventListener("scroll", (e) => {
+      let scrollValue = window.pageYOffset;
+      // console.log({
+      //   lastScroll,
+      //   scrollValue,
+      //   difference: scrollValue - lastScroll,
+      // });
+
+      if (scrollValue >= 600) {
+        header?.classList.add("headerActive");
+        if (scrollValue > lastScroll) {
+          // header?.classList.add("headerUp");
+        } else if (scrollValue < lastScroll) {
+          // header?.classList.remove("headerUp");
+        }
+      } else {
+        header?.classList.remove("headerActive");
+        // header?.classList.remove("headerUp");
+      }
+
+      lastScroll = scrollValue;
+    });
+  });
+</script>

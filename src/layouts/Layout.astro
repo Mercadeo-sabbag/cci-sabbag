@@ -1,23 +1,29 @@
+---
+import "../global.css";
+import "aos/dist/aos.css";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/sabbag-logo.png" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <!-- <link rel="icon" href="/favicon.ico" /> -->
+    <meta name="generator" content={Astro.generator} />
+    <title>CCI Sabbag</title>
+  </head>
+  <body>
+    <slot />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <script>
+      import AOS from "aos";
+      AOS.init({
+        duration: 700,
+        offset: 150,
+        once: true,
+      });
+    </script>
+  </body>
+</html>

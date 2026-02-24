@@ -1,0 +1,63 @@
+---
+import InstagramIcon from "../icons/InstagramIcon.astro";
+import MailIcon from "../icons/MailIcon.astro";
+import PhoneIcon from "../icons/PhoneIcon.astro";
+import WhatsappIcon from "../icons/WhatsappIcon.astro";
+---
+
+<footer class="bg-primary text-white flex flex-col gap-4 py-16 px-4 lg:px-8 w-full">
+  <div class="flex flex-col lg:flex-row gap-5 lg:items-center justify-between border-b border-white/40 pb-10">
+    <div class="flex flex-col gap-5">
+      <img src="/images/logo-white.png" alt="" class="w-72" />
+      <p class="w-96 text-sm pl-3">
+        Centro Clínico y de Investigación Sabbag Desde el Caribe colombiano
+        impulsamos la investigación clínica y la innovación médica para
+        transformar la atención en salud.
+      </p>
+      <nav class="pl-3">
+        <ul class="flex lg:items-center flex-wrap gap-10">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="flex flex-col gap-1 text-sm pl-5 lg:pl-0">
+      <h1 class="font-medium">Contacto</h1>
+      <p>CCI Sabbagradiologos</p>
+      <a href="tel:+573214339919">+57 321 433 9919</a>
+      <a href="mailto:coordinacioninvestigacion@sabbagradiologos.com"
+        >coordinacioninvestigacion@sabbagradiologos.com</a
+      >
+    </div>
+  </div>
+
+  <div class="flex flex-col lg:flex-row gap-4 justify-between items-center text-xs">
+    <p>&copy; 2026 CCI Sabbagradiologos. All rights reserved.</p>
+
+    <div class="flex items-center gap-4">
+      <a href="#">
+        <span>
+          <InstagramIcon sizes="30" />
+        </span>
+      </a>
+      <a href="https://wa.me/573214339919" target="_blank">
+        <span>
+          <WhatsappIcon sizes="30" />
+        </span>
+      </a>
+      <a href="tel:+573214339919">
+        <span>
+          <PhoneIcon sizes="30" />
+        </span>
+      </a>
+      <a href="mailto:coordinacioninvestigacion@sabbagradiologos.com">
+        <span>
+          <MailIcon sizes="30" />
+        </span>
+      </a>
+    </div>
+  </div>
+</footer>

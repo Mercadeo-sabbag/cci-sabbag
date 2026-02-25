@@ -14,5 +14,8 @@
     "aos": "^2.3.4",
     "astro": "^5.17.1",
     "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7"
   }
 }

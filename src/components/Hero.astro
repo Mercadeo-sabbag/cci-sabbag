@@ -5,12 +5,21 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
 <div id="inicio" class="w-full min-h-dvh">
   <div class="h-dvh relative">
     <video
-      src="/videos/hero-desktop.mp4"
+      src="/videos/hero-desktop.webm"
       autoplay
       loop
       muted
       preload="auto"
-      class="object-center bg-no-repeat h-full object-cover"
+      class="object-center bg-no-repeat h-full object-cover hidden lg:block"
+    >
+    </video>
+    <video
+      src="/videos/hero-mobile.webm"
+      autoplay
+      loop
+      muted
+      preload="auto"
+      class="object-center bg-no-repeat h-full object-cover lg:hidden"
     >
     </video>
 

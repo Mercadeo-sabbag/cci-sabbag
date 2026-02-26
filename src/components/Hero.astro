@@ -2,10 +2,10 @@
 import PhoneIcon from "../icons/PhoneIcon.astro";
 ---
 
-<div id="inicio" class="w-full min-h-dvh">
-  <div class="h-dvh relative">
+<div id="inicio" class="min-w-full min-h-dvh">
+  <div class="h-dvh relative w-full">
     <video
-    
+      contextmenu="false"
       src="/videos/hero-desktop.webm"
       autoplay
       loop
@@ -15,6 +15,7 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
     >
     </video>
     <video
+      contextmenu="false"
       src="/videos/hero-mobile.webm"
       autoplay
       loop
@@ -41,7 +42,11 @@ import PhoneIcon from "../icons/PhoneIcon.astro";
         >
           Centro Clínico y de Investigación Sabbag
         </h1>
-        <p data-aos="fade-up" data-aos-delay="300" class="w-96">
+        <p
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="max-w-96 text-sm lg:text-base"
+        >
           Desarrollamos soluciones diagnósticas y terapéuticas innovadoras que
           fortalecen la investigación clínica y transforman la atención en salud
           en la región Caribe.
